@@ -16,10 +16,12 @@
       </button>
     </div> -->
     <!-- input area end  -->
-    <div class="container  justify-content-center d-flex">
-      <div class="d-flex flex-column  justify-content-center align-items-center">
+    <div class="container justify-content-center d-flex">
+      <div class="d-flex flex-column justify-content-center align-items-center">
         <!-- main cart area start  -->
-        <div class="row d-flex justify-content-center align-items-center mt-4 w-100">
+        <div
+          class="row d-flex justify-content-center align-items-center mt-4 w-100"
+        >
           <div v-if="data.name" class="" v-show="data.length != 0">
             <div class="card" style="color: #4b515d; border-radius: 35px">
               <div class="card-body p-4">
@@ -61,32 +63,30 @@
                   class="d-flex justify-content-between align-items-center"
                   style="font-size: 1rem"
                 >
-                  <div>
+                  <div  class="d-flex flex-column justify-content-between align-items-center">
+                    <span class="ms-1"> wind speed </span>
+
                     <img src="../assets/wind-beaufort-1.svg" width="100px" />
                     <span class="ms-1"> {{ data.wind.speed }} km/h </span>
                   </div>
-                  <div>
+                  <div  class="d-flex flex-column  justify-content-between align-items-center">
+                    <span class="ms-1"> humidity</span>
+
                     <img src="../assets/humidity.svg" width="100px" />
 
                     <span class="ms-1"> {{ data.main.humidity }} % </span>
                   </div>
-                  <div>
-                    <i class="fas fa-sun fa-fw" style="color: #868b94"></i>
+                  <div  class="d-flex flex-column  justify-content-between align-items-center">
+                    <span class="ms-1"> pressure </span>
+                    <img src="../assets/pressure-high.svg" width="100px" />
                     <span class="ms-1"> {{ data.main.pressure }} hpa</span>
+                   
                   </div>
-                </div>
-                <div>
-                  <!-- <img
-                    src="https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/cloudy.svg"
-                    width="100px"
-                  /> -->
                 </div>
               </div>
             </div>
           </div>
-          <!-- <div v-else="data" class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div> -->
+
           <!-- loader start -->
 
           <div class="preloader" style="opacity: 1" v-else="data">
@@ -198,7 +198,6 @@
         </div>
         <!-- main cart area end  -->
 
-        <!-- <slide> -->
         <!-- forecaste cart area start  -->
         <div class="d-flex gap-2 justify-content-center flex-wrap mb-4">
           <div class="d-flex" v-for="(item, i) in forecasteData">
@@ -462,9 +461,11 @@ export default {
             if (!watherList[date]) watherList[date] = day;
           });
           res.data.list.map((weather) => {
-            console.log(weather.weather.map((item)=>{
-              console.log(item.main)
-            }));
+            console.log(
+              weather.weather.map((item) => {
+                console.log(item.main);
+              })
+            );
           });
 
           this.forecasteData = Object.values(watherList);
