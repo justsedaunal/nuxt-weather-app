@@ -19,7 +19,7 @@
     <div class="container py-5 h-100 justify-content-center d-flex">
       <div class="d-flex flex-column col-9">
         <!-- main cart area start  -->
-        <div class="row d-flex justify-content-center align-items-center mt-4 col-12">
+        <div class="row d-flex justify-content-center align-items-center mt-4 ">
           <div v-if="data.name" class="" v-show="data.length != 0">
             <div class="card" style="color: #4b515d; border-radius: 35px">
               <div class="card-body p-4">
@@ -418,6 +418,10 @@ export default {
         {
           url: "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/overcast-rain.svg",
           alt: "Rain",
+        },
+        {
+          url: "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/snow.svg",
+          alt: "Snow",
         },
       ],
     };
