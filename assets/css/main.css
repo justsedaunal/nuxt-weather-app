@@ -174,15 +174,9 @@ path {
   width: 500px;
 }
 
-.VueCarousel-inner {
-  visibility: visible !important;
-}
+.img-responsive {
+  width: 100%;
+  height: 250px;
 
-.VueCarousel-slide {
-  display: none !important;
-  flex-shrink: 1 !important;
-}
-.VueCarousel-slide-active, 
-.VueCarousel-slide.VueCarousel-slide-active {
-  display: flex !important;
+
 }

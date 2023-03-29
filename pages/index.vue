@@ -16,8 +16,8 @@
       </button>
     </div> -->
     <!-- input area end  -->
-    <div class="container h-100 justify-content-center d-flex">
-      <div class="d-flex flex-column col-9 justify-content-center">
+    <div class="container  justify-content-center d-flex">
+      <div class="d-flex flex-column  justify-content-center align-items-center">
         <!-- main cart area start  -->
         <div class="row d-flex justify-content-center align-items-center mt-4">
           <div v-if="data.name" class="" v-show="data.length != 0">
@@ -50,7 +50,7 @@
                           (image) => image.alt === data.weather[0].main
                         )?.url
                       "
-                      width="250px"
+                      class="img-responsive"
                     />
                   </div>
                   <!-- render icns start -->
