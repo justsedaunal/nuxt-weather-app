@@ -7,7 +7,7 @@ html {
 body {
   background: #efefef;
    height: 100vh;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 .preloader {

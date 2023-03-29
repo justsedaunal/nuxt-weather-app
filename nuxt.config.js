@@ -46,6 +46,10 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
+  // publicRuntimeConfig: {
+  //   segmentApiSecret: process.env.SEGMENT_API_SECRET,
+  //   vueAppApiOmapKey:process.env.VUE_APP_API_OMAP_KEY
+  // },
   buildModules: [
     '@nuxtjs/dotenv'
 ]
