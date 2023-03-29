@@ -1,5 +1,5 @@
 <template>
-  <section class="vh-100 container">
+  <section class="vh-100 container ">
     <!-- input area start  -->
     <!-- <div class="input-group mt-4">
       <div class="form-outline">
@@ -16,7 +16,7 @@
       </button>
     </div> -->
     <!-- input area end  -->
-    <div class="container justify-content-center d-flex">
+    <div class="container justify-content-center d-flex background-animation">
       <div class="d-flex flex-column justify-content-center align-items-center">
         <!-- main cart area start  -->
         <div
