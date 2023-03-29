@@ -439,14 +439,14 @@ export default {
 
       
       axios
-        .get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.VUE_APP_API_OMAP_KEY}`)
+        .get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`)
         .then((res) => {
           console.error(res.data);
           this.data = res.data;
         });
 
       axios
-        .get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.VUE_APP_API_OMAP_KEY}`)
+        .get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`)
         .then((res) => {
           console.error(res.data);
           const watherList = {};
