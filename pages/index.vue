@@ -16,10 +16,10 @@
       </button>
     </div> -->
     <!-- input area end  -->
-    <div class="container py-5 h-100 justify-content-center d-flex">
-      <div class="d-flex flex-column col-9">
+    <div class="container h-100 justify-content-center d-flex">
+      <div class="d-flex flex-column col-9 justify-content-center">
         <!-- main cart area start  -->
-        <div class="row d-flex justify-content-center align-items-center mt-4 ">
+        <div class="row d-flex justify-content-center align-items-center mt-4">
           <div v-if="data.name" class="" v-show="data.length != 0">
             <div class="card" style="color: #4b515d; border-radius: 35px">
               <div class="card-body p-4">
@@ -200,14 +200,14 @@
 
         <!-- <slide> -->
         <!-- forecaste cart area start  -->
-        <div class="d-flex gap-2 ">
-          <div class="d-flex " v-for="(item, i) in forecasteData">
+        <div class="d-flex gap-2">
+          <div class="d-flex" v-for="(item, i) in forecasteData">
             <div
-              class="row d-flex justify-content-center align-items-center mt-4 w-md-100 "
+              class="row d-flex justify-content-center align-items-center mt-4 w-md-100"
             >
               <div v-if="data.name" class="" v-show="data.length != 0">
                 <div class="card" style="color: #4b515d; border-radius: 35px">
-                  <div class="card-body ">
+                  <div class="card-body">
                     <div class="d-flex">
                       <h6 class="flex-grow-1"></h6>
                       <h6></h6>
@@ -437,26 +437,34 @@ export default {
       }
     },
     getPosition(position) {
-      console.log(this)
+      console.log(this);
       let lat = position.coords.latitude;
       let lon = position.coords.longitude;
 
-      
       axios
-        .get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`)
+        .get(
+          `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`
+        )
         .then((res) => {
           console.error(res.data);
           this.data = res.data;
         });
 
       axios
-        .get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`)
+        .get(
+          `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`
+        )
         .then((res) => {
           console.error(res.data);
           const watherList = {};
           res.data.list.forEach((day) => {
             const [date] = day.dt_txt.split(" ");
             if (!watherList[date]) watherList[date] = day;
+          });
+          res.data.list.map((weather) => {
+            console.log(weather.weather.map((item)=>{
+              console.log(item.main)
+            }));
           });
 
           this.forecasteData = Object.values(watherList);
