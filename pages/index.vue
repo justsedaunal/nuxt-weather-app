@@ -19,7 +19,7 @@
     <div class="container  justify-content-center d-flex">
       <div class="d-flex flex-column  justify-content-center align-items-center">
         <!-- main cart area start  -->
-        <div class="row d-flex justify-content-center align-items-center mt-4">
+        <div class="row d-flex justify-content-center align-items-center mt-4 w-100">
           <div v-if="data.name" class="" v-show="data.length != 0">
             <div class="card" style="color: #4b515d; border-radius: 35px">
               <div class="card-body p-4">
@@ -200,7 +200,7 @@
 
         <!-- <slide> -->
         <!-- forecaste cart area start  -->
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 justify-content-center flex-wrap mb-4">
           <div class="d-flex" v-for="(item, i) in forecasteData">
             <div
               class="row d-flex justify-content-center align-items-center mt-4 w-md-100"
