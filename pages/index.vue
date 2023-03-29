@@ -35,7 +35,9 @@
                     class="display-4 mb-0 font-weight-bold"
                     style="color: #1c2331"
                   >
-                    {{ data.main.temp }} K
+                    {{  Math.floor (data.main.temp -272.15)   }} 
+                    °
+
                   </h6>
                   <span class="small" style="color: #868b94"
                     >{{ data.weather[0].main }}
@@ -63,24 +65,29 @@
                   class="d-flex justify-content-between align-items-center"
                   style="font-size: 1rem"
                 >
-                  <div  class="d-flex flex-column justify-content-between align-items-center">
+                  <div
+                    class="d-flex flex-column justify-content-between align-items-center"
+                  >
                     <span class="ms-1"> wind speed </span>
 
                     <img src="../assets/wind-beaufort-1.svg" width="100px" />
                     <span class="ms-1"> {{ data.wind.speed }} km/h </span>
                   </div>
-                  <div  class="d-flex flex-column  justify-content-between align-items-center">
+                  <div
+                    class="d-flex flex-column justify-content-between align-items-center"
+                  >
                     <span class="ms-1"> humidity</span>
 
                     <img src="../assets/humidity.svg" width="100px" />
 
                     <span class="ms-1"> {{ data.main.humidity }} % </span>
                   </div>
-                  <div  class="d-flex flex-column  justify-content-between align-items-center">
+                  <div
+                    class="d-flex flex-column justify-content-between align-items-center"
+                  >
                     <span class="ms-1"> pressure </span>
                     <img src="../assets/pressure-high.svg" width="100px" />
                     <span class="ms-1"> {{ data.main.pressure }} hpa</span>
-                   
                   </div>
                 </div>
               </div>
@@ -207,18 +214,20 @@
               <div v-if="data.name" class="" v-show="data.length != 0">
                 <div class="card" style="color: #4b515d; border-radius: 35px">
                   <div class="card-body">
-                    <div class="d-flex">
-                      <h6 class="flex-grow-1"></h6>
-                      <h6></h6>
-                    </div>
+                   
 
                     <div class="d-flex flex-column text-center mt-5 mb-4">
-                      <h6
+                      <div class="d-flex align-items-center justify-content-center" >
+                        <h6
                         class="display-4 mb-0 font-weight-bold font-size"
                         style="color: #1c2331"
                       >
-                        {{ forecasteData[i].main.temp }} K
+                        {{ Math.floor(forecasteData[i].main.temp -272.15) }} 
+                        °
                       </h6>
+
+                      </div>
+                 
 
                       <div>
                         <img
@@ -373,7 +382,11 @@
         <!-- </slide> -->
       </div>
     </div>
+
+
   </section>
+
+ 
 </template>
 
 <script>
