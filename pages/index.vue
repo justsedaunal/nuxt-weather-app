@@ -455,7 +455,7 @@ export default {
 
       axios
         .get(
-          `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`
         )
         .then((res) => {
           console.error(res.data);
@@ -464,7 +464,7 @@ export default {
 
       axios
         .get(
-          `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`
         )
         .then((res) => {
           console.error(res.data);
