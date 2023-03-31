@@ -92,7 +92,7 @@
               </div>
             </div>
             <div
-              :class="data.weather[0].main === 'Clouds' ? 'clouds ' : 'hide'"
+              :class="data.weather[0].main === 'Clouds' ? 'clouds ' : 'clouds' "
             >
               <div class="clouds-1"></div>
               <div class="clouds-2"></div>
@@ -401,7 +401,7 @@ const CURRENTWEATHERAPI = `https://cors-anywhere.herokuapp.com/http://api.openwe
 const FORECASTFIVEDAYAPI = `https://api.openweathermap.org/data/2.5/forecast?lat={0}&lon={1}&appid=${process.env.VUE_APP_API_OMAP_KEY}`;
 
 const toDegree = -272.15;
-console.log(typeof date);
+// console.log(typeof date);
 
 // console.log(APIURL);
 
@@ -443,12 +443,12 @@ export default {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position) => this.getPosition(position),
-          (error) => console.error(error)
+          // (error) => console.error(error)
         );
       }
     },
     getPosition(position) {
-      console.log(this);
+      // console.log(this);
       let lat = position.coords.latitude;
       let lon = position.coords.longitude;
 
@@ -457,7 +457,7 @@ export default {
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`
         )
         .then((res) => {
-          console.error(res.data);
+          // console.error(res.data);
           this.data = res.data;
         });
 
@@ -466,19 +466,19 @@ export default {
           `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=b7c149aef4d068eccf67d83126ebbf26`
         )
         .then((res) => {
-          console.error(res.data);
+          // console.error(res.data);
           const watherList = {};
           res.data.list.forEach((day) => {
             const [date] = day.dt_txt.split(" ");
             if (!watherList[date]) watherList[date] = day;
           });
-          res.data.list.map((weather) => {
-            console.log(
-              weather.weather.map((item) => {
-                console.log(item.main);
-              })
-            );
-          });
+          // res.data.list.map((weather) => {
+          //   console.log(
+          //     weather.weather.map((item) => {
+          //       console.log(item.main);
+          //     })
+          //   );
+          // });
 
           this.forecasteData = Object.values(watherList);
         });
@@ -489,7 +489,7 @@ export default {
 
     currentDate() {
       const current = new Date();
-      console.log(current);
+      // console.log(current);
       const date = `${current.getDate()}/${current.getMonth() + 1}/${
         current.getFullYear() +
         "," +
