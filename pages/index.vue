@@ -91,7 +91,9 @@
                 </div>
               </div>
             </div>
-            <div :class="data.weather[0].main === 'Clouds' ? 'clouds' : 'hide'">
+            <div
+              :class="data.weather[0].main === 'Clouds' ? 'clouds ' : 'hide'"
+            >
               <div class="clouds-1"></div>
               <div class="clouds-2"></div>
               <div class="clouds-3"></div>

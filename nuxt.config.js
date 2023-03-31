@@ -9,7 +9,7 @@ export default {
       lang: "en",
     },
     bodyAttrs: {
-      class: "",
+      class: "snow-animation ",
     },
     meta: [
       { charset: "utf-8" },
