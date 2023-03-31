@@ -1,5 +1,5 @@
 <template>
-  <section class="vh-100 container ">
+  <section class="vh-100 container">
     <!-- input area start  -->
     <!-- <div class="input-group mt-4">
       <div class="form-outline">
@@ -16,7 +16,7 @@
       </button>
     </div> -->
     <!-- input area end  -->
-    <div class="container justify-content-center d-flex background-animation">
+    <div class="container justify-content-center d-flex">
       <div class="d-flex flex-column justify-content-center align-items-center">
         <!-- main cart area start  -->
         <div
@@ -35,9 +35,8 @@
                     class="display-4 mb-0 font-weight-bold"
                     style="color: #1c2331"
                   >
-                    {{  Math.floor (data.main.temp -272.15)   }} 
+                    {{ Math.floor(data.main.temp - 272.15) }}
                     °
-
                   </h6>
                   <span class="small" style="color: #868b94"
                     >{{ data.weather[0].main }}
@@ -91,6 +90,11 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div :class="data.weather[0].main === 'Clouds' ? 'clouds' : 'hide'">
+              <div class="clouds-1"></div>
+              <div class="clouds-2"></div>
+              <div class="clouds-3"></div>
             </div>
           </div>
 
@@ -214,20 +218,18 @@
               <div v-if="data.name" class="" v-show="data.length != 0">
                 <div class="card" style="color: #4b515d; border-radius: 35px">
                   <div class="card-body">
-                   
-
                     <div class="d-flex flex-column text-center mt-5 mb-4">
-                      <div class="d-flex align-items-center justify-content-center" >
-                        <h6
-                        class="display-4 mb-0 font-weight-bold font-size"
-                        style="color: #1c2331"
+                      <div
+                        class="d-flex align-items-center justify-content-center"
                       >
-                        {{ Math.floor(forecasteData[i].main.temp -272.15) }} 
-                        °
-                      </h6>
-
+                        <h6
+                          class="display-4 mb-0 font-weight-bold font-size"
+                          style="color: #1c2331"
+                        >
+                          {{ Math.floor(forecasteData[i].main.temp - 272.15) }}
+                          °
+                        </h6>
                       </div>
-                 
 
                       <div>
                         <img
@@ -379,14 +381,9 @@
         </div>
 
         <!-- forecaste cart area end  -->
-        <!-- </slide> -->
       </div>
     </div>
-
-
   </section>
-
- 
 </template>
 
 <script>
