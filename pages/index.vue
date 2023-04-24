@@ -92,7 +92,7 @@
               </div>
             </div>
             <div
-              :class="data.weather[0].main === 'Clouds' ? 'clouds ' : 'clouds' "
+              :class="data.weather[0].main === 'Clouds' ? 'clouds ' : 'clouds'"
             >
               <div class="clouds-1"></div>
               <div class="clouds-2"></div>
@@ -440,9 +440,12 @@ export default {
 
   methods: {
     getCurrentLocation() {
-      if (navigator.geolocation) {
+      if (!navigator.geolocation) {
+        alert("Geolocation is not supported by your browser");
+      } else {
         navigator.geolocation.getCurrentPosition(
           (position) => this.getPosition(position),
+          (error) => this.error()
           // (error) => console.error(error)
         );
       }
@@ -482,6 +485,11 @@ export default {
 
           this.forecasteData = Object.values(watherList);
         });
+    },
+    error() {
+      alert(
+        "Unable to retrieve your location,please let enable to know your location to browser and refresh the page after enable"
+      );
     },
     setData(data) {
       this.data = data;
