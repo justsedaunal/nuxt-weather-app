@@ -440,14 +440,13 @@ export default {
 
   methods: {
     getCurrentLocation() {
-      if (!navigator.geolocation) {
-        alert("Geolocation is not supported by your browser");
-      } else {
+      if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position) => this.getPosition(position),
-          (error) => this.error()
-          // (error) => console.error(error)
+          (error) => this.error(error)
         );
+      } else {
+        this.error(alert("Geolocation is not supported by your browser"));
       }
     },
     getPosition(position) {
@@ -488,7 +487,7 @@ export default {
     },
     error() {
       alert(
-        "Unable to retrieve your location,please let enable to know your location to browser and refresh the page after enable"
+        "Unable to retrieve your location. Please enable location services in your browser and refresh the page."
       );
     },
     setData(data) {
